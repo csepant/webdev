@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ContactForm;
+use DB;
 
 class ContactFormController extends Controller
 {
@@ -39,6 +41,16 @@ class ContactFormController extends Controller
             'email' => 'required',
             'message' => 'required'
         ]);
+
+        $cf = new ContactForm;
+        $cf->first_name = $request->input('first_name');
+        $cf->last_name = $request->input('last_name');
+        $cf->email = $request->input('email');
+        $cf->message = $request->input('message');
+        $cf->save();
+
+        return redirect('/')->with('success', 'Gracias por contactarnos!');
+
     }
 
     /**
