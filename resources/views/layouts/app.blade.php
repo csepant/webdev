@@ -41,7 +41,7 @@
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
-
+			@include('incl.messages')
 			@yield('content')
 			</div>
 

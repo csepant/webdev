@@ -5,8 +5,8 @@
 <section id="banner">
 	<div class="inner">
 		<div class="logo"><span class="icon fa-diamond"></span></div>
-		<h2>This is Solid State</h2>
-		<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+		<h2>DISEÑO & FUNCIONALIDAD</h2>
+		<p>SOLUCIONES WEB ADAPTADAS A TUS NECESIDADES.</p>
 	</div>
 </section>
 
@@ -93,23 +93,29 @@
 	<div class="inner">
 		<h2 class="major">Get in touch</h2>
 		<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-		<form method="post" action="#">
+		{!! Form::open(['action' => 'ContactFormController@store', 'method' => 'POST']) !!}
+
+		
 			<div class="field">
-				<label for="name">Name</label>
-				<input type="text" name="name" id="name" />
+				{{Form::label('first_name', 'Nombre')}}
+				{{Form::text('first_name', '', ['id'=>'name', 'placeholder'=>''])}}
 			</div>
 			<div class="field">
-				<label for="email">Email</label>
-				<input type="email" name="email" id="email" />
+				{{Form::label('last_name', 'Apellido')}}
+				{{Form::text('last_name', '', ['id'=>'last_name', 'placeholder'=>''])}}
 			</div>
 			<div class="field">
-				<label for="message">Message</label>
-				<textarea name="message" id="message" rows="4"></textarea>
+				{{Form::label('email', 'Email')}}
+				{{Form::text('email', '', ['id'=>'email', 'placeholder'=>''])}}
+			</div>
+			<div class="field">
+				{{Form::label('message', 'Mensaje')}}
+				{{Form::textarea('message', '', ['id'=>'message', 'placeholder'=>''])}}
 			</div>
 			<ul class="actions">
-				<li><input type="submit" value="Send Message" /></li>
+				{{Form::submit('Enviar',['id'=>'submit'])}}
 			</ul>
-		</form>
+		{!! Form::close() !!}
 		<ul class="contact">
 			<li class="fa-home">
 				Untitled Inc<br />

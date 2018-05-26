@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'PagesController@index');
-
+Route::resource('contactform', 'ContactFormController');
