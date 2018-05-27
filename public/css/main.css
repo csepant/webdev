@@ -3136,8 +3136,7 @@
 	#banner {
 		padding: 7em 0 8.25em 0;
 		background-color: #2e3141;
-		/*background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url(../../images/santiago-city2.jpg);*/
-		background-image: url(../../images/santiago-city2.jpg);
+		background-image: linear-gradient(to top, rgba(2, 138, 153, 0.3), rgba(103, 157, 162, 0.5)), url(../../images/santiago-city2.jpg);
 		background-size:cover;
 		background-position: center, center;
 		background-repeat: no-repeat;
@@ -3146,19 +3145,20 @@
 		height: 100vh;
 	}
 
-		#banner .inner {
-			margin: 0 auto;
-			width: 55em;
-			background-image: linear-gradient(120deg, rgba(126, 214, 223,0.8), rgba(34, 166, 179,.8)), url("../../images/1x/stgo-connect.png");
-			background-size:cover;
-			padding: 10em;
-			box-shadow: 0 15px 27px 0 rgba(0,0,0,0.5);
-
-		}
+	#banner .inner {
+		margin: 0 auto;
+		width: 55em;
+		background-image: linear-gradient(120deg, rgba(46, 49, 65, 0.88), rgba(76, 92, 150, 0.9)), url(../../images/1x/stgo-connect.png);
+		background-position: bottom;
+		background-size: cover;
+		padding: 3em;
+		box-shadow: 0 15px 27px 0 rgba(0,0,0,0.3);
+	}
 
 		#banner .inner span, #banner .inner h2,
 		#banner .inner p {
-			text-shadow: 0 3px 5px rgba(10, 112, 121, 0.8);
+			text-shadow: 0 3px 5px rgb(59, 62, 80);
+			text-align: center;
 		}
 
 		#banner .logo {
@@ -3566,15 +3566,13 @@
 			}
 
 			.wrapper.spotlight .image {
-				border-radius: 100%;
 				margin: 0 3em 2em 0;
-				width: 22em;
+				width: 62em;
 				overflow: hidden;
 				-ms-flex: 1;
 			}
 
 				.wrapper.spotlight .image img {
-					border-radius: 100%;
 					width: 100%;
 				}
 
