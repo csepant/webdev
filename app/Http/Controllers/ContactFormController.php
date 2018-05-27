@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\ContactForm;
 use DB;
@@ -36,20 +37,29 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        $this -> validate($request, [
+        $messages = [
+            'first_name.required' => 'El campo "Nombre" es obligatorio.',
+            'email.required'  => 'El campo "Email" es obligatorio.',
+            'message.required' => 'El campo "Mensaje" es obligatorio.'
+        ];
+
+        $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'email' => 'required',
             'message' => 'required'
-        ]);
+        ], $messages);
 
-        $cf = new ContactForm;
-        $cf->first_name = $request->input('first_name');
-        $cf->last_name = $request->input('last_name');
-        $cf->email = $request->input('email');
-        $cf->message = $request->input('message');
-        $cf->save();
-
-        return redirect('/')->with('success', 'Gracias por contactarnos!');
+        if ($validator->fails()){
+            return redirect('/#contact')->withErrors($validator);
+        } else {
+            $cf = new ContactForm;
+            $cf->first_name = $request->input('first_name');
+            $cf->last_name = $request->input('last_name');
+            $cf->email = $request->input('email');
+            $cf->message = $request->input('message');
+            $cf->save();
+            return redirect('/#contact')->with('success', 'Gracias por contactarnos!');
+        }
 
     }
 
@@ -97,4 +107,5 @@ class ContactFormController extends Controller
     {
         //
     }
+    
 }

@@ -2565,6 +2565,42 @@
 				border-top: 0;
 			}
 
+/* Alert */
+.alert {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    border-radius: 3px;
+    box-shadow: 0 5px 17px 0 rgb(44, 50, 62);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: small;
+    vertical-align: middle;
+}
+
+.alert i {
+	margin-right: .3em;
+}
+
+.alert:last-of-type {
+    margin-bottom: 3em;
+}
+
+.alert.alert-success {
+    background-image: linear-gradient(120deg, #22a6b3,#437176);
+    border: 1px solid #00dcff;
+    text-shadow: 0 1px 2px #1b6269;
+}
+
+.alert.alert-danger {
+	background-image: linear-gradient(120deg, #f84720,#e92724);
+    border: 1px solid #ff0000;
+    text-shadow: 0 1px 2px #a11411;
+}
+
 /* Button */
 
 	input[type="submit"],
